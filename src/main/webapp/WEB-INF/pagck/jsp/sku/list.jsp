@@ -1,0 +1,1264 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: thundersoft
+  Date: 2018/1/12
+  Time: 10:52
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Blank Page - Ace Admin</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/ace/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ace/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="/bootstrapTable/bootstrap-table.css">
+    <link rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/layer/theme/default/layer.css">
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="/ace/css/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="/ace/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="/ace/css/ace-rtl.min.css" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/ace/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="/ace/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="/ace/js/html5shiv.min.js"></script>
+    <script src="/ace/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default          ace-save-state">
+    <div class="navbar-container ace-save-state" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left">
+            <a href="index.html" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    Ace Admin
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+                <li class="grey dropdown-modal">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="ace-icon fa fa-tasks"></i>
+                        <span class="badge badge-grey">4</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-check"></i>
+                            4 Tasks to complete
+                        </li>
+
+                        <li class="dropdown-content">
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+                                            <span class="pull-left">Software Update</span>
+                                            <span class="pull-right">65%</span>
+                                        </div>
+
+                                        <div class="progress progress-mini">
+                                            <div style="width:65%" class="progress-bar"></div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+                                            <span class="pull-left">Hardware Upgrade</span>
+                                            <span class="pull-right">35%</span>
+                                        </div>
+
+                                        <div class="progress progress-mini">
+                                            <div style="width:35%" class="progress-bar progress-bar-danger"></div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+                                            <span class="pull-left">Unit Testing</span>
+                                            <span class="pull-right">15%</span>
+                                        </div>
+
+                                        <div class="progress progress-mini">
+                                            <div style="width:15%" class="progress-bar progress-bar-warning"></div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+                                            <span class="pull-left">Bug Fixes</span>
+                                            <span class="pull-right">90%</span>
+                                        </div>
+
+                                        <div class="progress progress-mini progress-striped active">
+                                            <div style="width:90%" class="progress-bar progress-bar-success"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="#">
+                                See tasks with details
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="purple dropdown-modal">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                        <span class="badge badge-important">8</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-exclamation-triangle"></i>
+                            8 Notifications
+                        </li>
+
+                        <li class="dropdown-content">
+                            <ul class="dropdown-menu dropdown-navbar navbar-pink">
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+														New Comments
+													</span>
+                                            <span class="pull-right badge badge-info">+12</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="btn btn-xs btn-primary fa fa-user"></i>
+                                        Bob just signed up as an editor ...
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+														New Orders
+													</span>
+                                            <span class="pull-right badge badge-success">+8</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="clearfix">
+													<span class="pull-left">
+														<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+														Followers
+													</span>
+                                            <span class="pull-right badge badge-info">+11</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="#">
+                                See all notifications
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="green dropdown-modal">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                        <span class="badge badge-success">5</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-envelope-o"></i>
+                            5 Messages
+                        </li>
+
+                        <li class="dropdown-content">
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="ace/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Alex:</span>
+														Ciao sociis natoque penatibus et auctor ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>a moment ago</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="ace/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Susan:</span>
+														Vestibulum id ligula porta felis euismod ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>20 minutes ago</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="ace/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Bob:</span>
+														Nullam quis risus eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>3:15 pm</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="ace/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Kate:</span>
+														Ciao sociis natoque eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>1:33 pm</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <img src="ace/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                        <span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Fred:</span>
+														Vestibulum id penatibus et auctor  ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>10:09 am</span>
+													</span>
+												</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="inbox.html">
+                                See all messages
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="light-blue dropdown-modal">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="ace/images/avatars/user.jpg" alt="Jason's Photo" />
+                        <span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i>
+                                Settings
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="profile.html">
+                                <i class="ace-icon fa fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<div class="main-container ace-save-state" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.loadState('main-container')}catch(e){}
+    </script>
+
+    <div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+        <script type="text/javascript">
+            try{ace.settings.loadState('sidebar')}catch(e){}
+        </script>
+
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+
+                <span class="btn btn-info"></span>
+
+                <span class="btn btn-warning"></span>
+
+                <span class="btn btn-danger"></span>
+            </div>
+        </div><!-- /.sidebar-shortcuts -->
+
+        <ul class="nav nav-list">
+            <li class="">
+                <a href="index.html">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Dashboard </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-desktop"></i>
+                    <span class="menu-text">
+								 商品 &amp; 品牌
+							</span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="/toBrands">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                           品牌
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="/findAllBrands">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            商品
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="elements.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Elements
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="buttons.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Buttons &amp; Icons
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="content-slider.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Content Sliders
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="treeview.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Treeview
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="jquery-ui.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            jQuery UI
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="nestable-list.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Nestable Lists
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-caret-right"></i>
+
+                            Three Level Menu
+                            <b class="arrow fa fa-angle-down"></b>
+                        </a>
+
+                        <b class="arrow"></b>
+
+                        <ul class="submenu">
+                            <li class="">
+                                <a href="#">
+                                    <i class="menu-icon fa fa-leaf green"></i>
+                                    Item #1
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+
+                            <li class="">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-pencil orange"></i>
+
+                                    4th level
+                                    <b class="arrow fa fa-angle-down"></b>
+                                </a>
+
+                                <b class="arrow"></b>
+
+                                <ul class="submenu">
+                                    <li class="">
+                                        <a href="#">
+                                            <i class="menu-icon fa fa-plus purple"></i>
+                                            Add Product
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="#">
+                                            <i class="menu-icon fa fa-eye pink"></i>
+                                            View Products
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-list"></i>
+                    <span class="menu-text"> Tables </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="tables.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Simple &amp; Dynamic
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="jqgrid.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            jqGrid plugin
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-pencil-square-o"></i>
+                    <span class="menu-text"> Forms </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="form-elements.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Form Elements
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="form-elements-2.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Form Elements 2
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="form-wizard.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Wizard &amp; Validation
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="wysiwyg.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Wysiwyg &amp; Markdown
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="dropzone.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Dropzone File Upload
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="widgets.html">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> Widgets </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="calendar.html">
+                    <i class="menu-icon fa fa-calendar"></i>
+
+                    <span class="menu-text">
+								Calendar
+
+								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
+									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+								</span>
+							</span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="gallery.html">
+                    <i class="menu-icon fa fa-picture-o"></i>
+                    <span class="menu-text"> Gallery </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-tag"></i>
+                    <span class="menu-text"> More Pages </span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="profile.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            User Profile
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="inbox.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Inbox
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="pricing.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Pricing Tables
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="invoice.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Invoice
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="timeline.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Timeline
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="search.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Search Results
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="email.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Email Templates
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="login.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Login &amp; Register
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="active open">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-file-o"></i>
+
+                    <span class="menu-text">
+								Other Pages
+
+								<span class="badge badge-primary">5</span>
+							</span>
+
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="faq.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            FAQ
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="error-404.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Error 404
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="error-500.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Error 500
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="grid.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Grid
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="active">
+                        <a href="blank.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Blank Page
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul>
+            </li>
+        </ul><!-- /.nav-list -->
+
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Other Pages</a>
+                    </li>
+                    <li class="active">Blank Page</li>
+                </ul><!-- /.breadcrumb -->
+
+                <!---->
+                <%--<div class="nav-search" id="nav-search">--%>
+                    <%--<form class="form-search">--%>
+								<%--<span class="input-icon">--%>
+									<%--<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />--%>
+									<%--<i class="ace-icon fa fa-search nav-search-icon"></i>--%>
+								<%--</span>--%>
+                    <%--</form>--%>
+                <%--</div><!-- /.nav-search -->--%>
+            </div>
+
+            <div class="page-content">
+                <div class="ace-settings-container" id="ace-settings-container">
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+
+                    <div class="ace-settings-box clearfix" id="ace-settings-box">
+                        <div class="pull-left width-50">
+                            <div class="ace-settings-item">
+                                <div class="pull-left">
+                                    <select id="skin-colorpicker" class="hide">
+                                        <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                        <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                        <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                        <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                    </select>
+                                </div>
+                                <span>&nbsp; Choose Skin</span>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-add-container">
+                                    Inside
+                                    <b>.container</b>
+                                </label>
+                            </div>
+                        </div><!-- /.pull-left -->
+
+                        <div class="pull-left width-50">
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                            </div>
+
+                            <div class="ace-settings-item">
+                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
+                                <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                            </div>
+                        </div><!-- /.pull-left -->
+                    </div><!-- /.ace-settings-box -->
+                </div><!-- /.ace-settings-container -->
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div id="div-search" style="display: none" >
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form class="form-group">
+                                        <label for="brandId" class="col-sm-1 control-label text-right">商品名：</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="input-sm form-control" id="brandId"/>
+                                        </div>
+
+                                        <label  class="col-sm-1 control-label text-right">性别：</label>
+                                        <div class="col-sm-3">
+                                            <select id="sex" class="input-sm form-control">
+                                                <option value="">请选择</option>
+                                                <option value="male">男</option>
+                                                <option value="female">女</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="btn-group">
+                                                <button class="btn btn-success btn-sm" type="button" id="search">
+                                                    <span class="ace-icon fa fa-search icon-on-right "></span>
+                                                    查询
+                                                </button>
+                                                <button class="btn btn-danger btn-sm" type="reset">
+                                                    <span class="ace-icon fa fa-trash-o  orange"></span>
+                                                    清空
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="toolbar" class="btn-group">
+                            <button id="update" class="btn btn-success btn-sm" data-toggle="modal" >
+                                <i class="fa fa-pencil-square-o"></i> 修改
+                            </button>
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                &times;
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                <b>修改</b>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <%--在这里添加一些文本--%>
+                                            <form class="form-horizontal" role="form" action="/skuUpdate" method="post" id="my_sku">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="skuId">
+                                                        ID </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="skuId" class="col-xs-10 col-sm-8" name="skuId"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="skuPrice">
+                                                        售价 </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="skuPrice" class="col-xs-10 col-sm-8" name="skuPrice"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="marketPrice">
+                                                        市场价 </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="marketPrice" class="col-xs-10 col-sm-8" name="marketPrice"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label no-padding-right" for="stockInventory">
+                                                        库存 </label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" id="stockInventory" class="col-xs-10 col-sm-8" name="stockInventory"/>
+                                                    </div>
+                                                </div>
+
+                                                <%--<c:set value="${sku}" var="sku"></c:set>--%>
+                                                <%--<div class="space-14"></div>--%>
+                                                <%--<div class="form-group">--%>
+                                                    <%--<input type="hidden" name="id" value="${sku.id}">--%>
+                                                    <%--<label class="col-sm-3 control-label no-padding-right" > 商品颜色 </label>--%>
+                                                    <%--<div class="col-sm-9">--%>
+                                                        <%--<c:forEach items="${ce}" var="ce">--%>
+                                                                <%--<div class="checkbox"  style="float: left">--%>
+                                                                    <%--<label>--%>
+                                                                        <%--<input name="color" type="checkbox" class="ace" value="${ce.massage}"--%>
+                                                                               <%--<c:if test="${skucolor.equals(ce.massage)}">checked</c:if>/>--%>
+                                                                        <%--<span class="lbl"> ${ce.massage}</span>--%>
+                                                                    <%--</label>--%>
+                                                                <%--</div>--%>
+                                                        <%--</c:forEach>--%>
+                                                    <%--</div>--%>
+                                                <%--</div>--%>
+
+                                                <%--<div class="form-group">--%>
+                                                    <%--<input type="hidden" name="id" value="${sku.id}">--%>
+                                                    <%--<label class="col-sm-3 control-label no-padding-right" > 商品尺寸 </label>--%>
+                                                    <%--<div class="col-sm-9">--%>
+                                                        <%--<c:forEach items="${se}" var="se">--%>
+                                                            <%--<div class="checkbox"  style="float: left">--%>
+                                                                <%--<label>--%>
+                                                                    <%--<input name="color" type="checkbox" class="ace" value="${se.massage}"--%>
+                                                                           <%--<c:if test="${sku.size.equals(se.massage)}">checked</c:if>/>--%>
+                                                                    <%--<span class="lbl"> ${se.massage}</span>--%>
+                                                                <%--</label>--%>
+                                                            <%--</div>--%>
+                                                        <%--</c:forEach>--%>
+                                                    <%--</div>--%>
+                                                <%--</div>--%>
+                                            </form>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                            </button>
+                                            <button type="button" class="btn btn-primary"  id="update_sku_btn">
+                                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                                提交更改
+                                            </button>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal -->
+                            </div>
+
+                            <button id="toggle-search" class="btn btn-success btn-sm" title="查询" type="button">
+                                <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <table id="table" data-page-list="[10,15,20]" data-toolbar="#toolbar">
+                        </table>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">Ace</span>
+							Application &copy; 2013-2014
+						</span>
+
+                &nbsp; &nbsp;
+                <span class="action-buttons">
+							<a href="#">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+							</a>
+						</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="/ace/js/jquery-2.1.4.min.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="/ace/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="/ace/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="/script/jquery-3.2.1.min.js"></script>
+<script src="/script/jquery.min.js"></script>
+<script src="/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="/bootstrapTable/bootstrap-table.js"></script>
+<script src="/layer/layer.js"></script>
+<!-- ace scripts -->
+<script src="/ace/js/ace-elements.min.js"></script>
+<script src="/ace/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    var $table = $('#table');
+    var $remove = $('#remove');
+    var $add = $('#add');
+    var $update = $('#update');
+    var selections = [];
+    $table.on('check.bs.table uncheck.bs.table ' +
+        'check-all.bs.table uncheck-all.bs.table', function () {
+        selections = getIdSelections();
+        // push or splice the selections if you want to save all data selections
+        $remove.prop('disabled', !selections.length);
+        // save your data, here just save the current page
+
+    });
+    //获取选中行的id
+    function getIdSelections() {
+        return $.map($table.bootstrapTable('getSelections'), function (row) {
+            return row.id
+        });
+    }
+
+    function initTable() {
+        $table.bootstrapTable({
+            url: '/findSkuBySku_Id/',
+            columns: [{
+                field: 'state',
+                checkbox: true
+            }, {
+                <%--<c:set value="${sku_product_id}"--%>
+                field: 'product.brand.name',
+                align: 'center',
+                title: '所属商品'
+            }, {
+                field: 'color',
+                align: 'center',
+                title: '商品颜色'
+            }, {
+                field: 'size',
+                align: 'center',
+                title: '商品尺寸'
+            }, {
+                field: 'deliveFee',
+                align: 'center',
+                title: '运费'
+            }, {
+                field: 'skuPrice',
+                align: 'center',
+                title: '售价'
+            }, {
+                field: 'marketPrice',
+                align: 'center',
+                title: '市场价'
+            }, {
+                field: 'stockInventory',
+                align: 'center',
+                title: '库存'
+            }],
+            height: $(window).height(),
+            pagination: true,
+            pageSize: 10,
+            dataType: "json",
+            search: false,
+            striped: true,
+            queryParams:queryParams,
+            sidePagination: "server"
+            //queryParams属性 在请求远程数据的时候发送额外的参数。
+        })
+    }
+
+    function queryParams(params) {
+        var temp = {
+            limit: params.limit,
+            offset: params.offset,
+            sku_product_id: '${sku_product_id}'
+            // description: $("#description").val(),
+            // imgUrl: $("#imgUrl").val(),
+            // webSite: $("#webSite").val(),
+            // sort: $("#sort").val(),
+            // isDisplay: $("#isDisplay").val()
+        }
+        return temp;
+    }
+    //查询
+    $('#search').click(function () {
+        $table.bootstrapTable('refresh');
+    })
+    /**
+     * 修改元素
+     */
+    $update.click(function () {
+        if(selections.length == 1){
+            // window.location.href="/skuUpdate/" + selections;
+            var skuId = selections[0];
+            $.post('/goToSkuOne/',{id:skuId},function (skuData) {
+                //把数据设置到表单中   data 为回调的值
+                $('#skuPrice').val(skuData.skuPrice);
+                $('#skuId').val(skuData.id);
+                $('#stockInventory').val(skuData.stockInventory);
+                $('#marketPrice').val(skuData.marketPrice);
+                $('#myModal').modal('show');
+
+            })
+        }else {
+            layer.msg('请选择一条数据',{icon:3});
+        }
+    });
+
+    //查询表单的显示和隐藏
+    $('#toggle-search').click(function () {
+        $(this).find('i').toggleClass("fa-angle-double-down fa-angle-double-up");
+        $("#div-search").slideToggle("fast");
+    })
+
+    $('#update_sku_btn').click(function () {
+        $('#my_sku').submit();
+    });
+
+    $(function () {
+        initTable();
+    })
+
+</script>
+</body>
+</html>
+
+
